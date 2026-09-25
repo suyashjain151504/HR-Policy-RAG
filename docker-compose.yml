@@ -1,0 +1,18 @@
+# Floci-AWS. Do NOT publish 4500 here — floci-ui binds 4500 itself.
+
+services:
+  floci:
+    image: floci/floci:latest
+    container_name: floci
+    ports:
+      - "4566:4566"
+    volumes:
+      - ./data/floci:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      FLOCI_STORAGE_MODE: hybrid
+      FLOCI_RUN_AS_ROOT: "true"
+      FLOCI_SERVICES_UI_ENABLED: "true"
+      FLOCI_SERVICES_UI_IMAGE: floci/floci-ui:latest
+      FLOCI_SERVICES_UI_ENDPOINT: http://floci:4566
+    restart: unless-stopped

@@ -1,0 +1,43 @@
+python-dotenv
+
+# orchestration
+# langchain 1.x is required — hr_assistant/agent.py uses
+# `from langchain.agents import create_agent` (the v1 agent API). A resolve
+# to 0.3.x breaks that import. After any deliberate upgrade, `pip freeze`
+# and pin exact versions here.
+langchain>=1.0,<2
+langchain-core>=1.0,<2
+langchain-community
+langchain-text-splitters
+langgraph>=0.2
+
+# LLM — OpenAI-compatible client → LiteLLM sidecar or llama.cpp.
+# Not Vertex. Not langchain-google-genai.
+openai
+
+# vector store — Qdrant (local or cloud) + FastEmbed dense/BM25
+langchain-qdrant
+qdrant-client
+fastembed
+
+# document ingestion — Floci S3 + multi-format parsing (pdf/docx/pptx)
+boto3
+pypdf
+python-docx
+python-pptx
+
+# HTTP helpers (rerank / health checks). No Jina SDK.
+requests
+
+# web app
+streamlit
+
+# LangGraph Studio (local visual debugger — run `langgraph dev`)
+langgraph-cli[inmem]
+
+# LangSmith — request tracing (free Developer plan)
+langsmith
+
+# guardrails — in-process (replaces Model Armor)
+presidio-analyzer
+presidio-anonymizer
