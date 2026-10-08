@@ -9,6 +9,9 @@ __pycache__/
 # doc folder
 data/
 
+# langgraph
+.langgraph_api/
+
 # terraform
 terraform/.terraform
 terraform/terraform.tfvars

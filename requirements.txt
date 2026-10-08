@@ -10,6 +10,7 @@ langchain-core>=1.0,<2
 langchain-community
 langchain-text-splitters
 langgraph>=0.2
+langchain-openai
 
 # LLM — OpenAI-compatible client → LiteLLM sidecar or llama.cpp.
 # Not Vertex. Not langchain-google-genai.
